@@ -8,12 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 public class Laskuri extends AppCompatActivity {
 
@@ -128,59 +124,82 @@ public class Laskuri extends AppCompatActivity {
         });
     }
 
+    // Counts operation, updates answer and updates log. Handles arithmetic errors.
     private void countPlus(){
- 
-        String answer = String.valueOf(Integer.parseInt(ETplus1.getText().toString()) + Integer.parseInt(ETplus2.getText().toString()));
-        Tplus.setText(answer);
-        log.add((log.size() + 1) + ":  " + ETplus1.getText().toString() + " + " + ETplus2.getText().toString() + " = " + answer);
+        String answer = null;
+        try {
+            answer = String.valueOf(Integer.parseInt(ETplus1.getText().toString()) + Integer.parseInt(ETplus2.getText().toString()));
+            Tplus.setText(answer);
+            log.add((log.size() + 1) + ":  " + ETplus1.getText().toString() + " + " + ETplus2.getText().toString() + " = " + answer);
+        } catch (NumberFormatException | ArithmeticException e) {
+            answer = "NaN";
+            Tplus.setText(answer);
+            log.add((log.size() + 1) + ":  NaN + NaN = NaN");
+        }
         saveArray();
     }
 
     private void countMinus(){
-        Tminus.setText(String.valueOf(Integer.parseInt(ETminus1.getText().toString()) - Integer.parseInt(ETminus2.getText().toString())));
-
+        String answer = null;
+        try {
+            answer = String.valueOf(Integer.parseInt(ETminus1.getText().toString()) - Integer.parseInt(ETminus2.getText().toString()));
+            Tminus.setText(answer);
+            log.add((log.size() + 1) + ":  " + ETminus1.getText().toString() + " - " + ETminus2.getText().toString() + " = " + answer);
+        } catch (NumberFormatException | ArithmeticException e) {
+            answer = "NaN";
+            Tminus.setText(answer);
+            log.add((log.size() + 1) + ":  NaN - NaN = NaN");
+        };
+        saveArray();
     }
 
     private void countTimes(){
-        Ttimes.setText(String.valueOf(Integer.parseInt(ETtimes1.getText().toString()) * Integer.parseInt(ETtimes2.getText().toString())));
+        String answer = null;
+        try {
+            answer = String.valueOf(Integer.parseInt(ETtimes1.getText().toString()) * Integer.parseInt(ETtimes2.getText().toString()));
+            Ttimes.setText(answer);
+            log.add((log.size() + 1) + ":  " + ETtimes1.getText().toString() + " * " + ETtimes2.getText().toString() + " = " + answer);
+        } catch (NumberFormatException | ArithmeticException e) {
+            answer = "NaN";
+            Ttimes.setText(answer);
+            log.add((log.size() + 1) + ":  NaN * NaN = NaN");
+        };
+        saveArray();
     }
 
     private void countDivision(){
-        Tdivision.setText(String.valueOf(Integer.parseInt(ETdivision1.getText().toString()) / Integer.parseInt(ETdivision2.getText().toString())));
+        String answer = null;
+        try {
+            answer = String.valueOf(Integer.parseInt(ETdivision1.getText().toString()) / Integer.parseInt(ETdivision2.getText().toString()));
+            Tdivision.setText(answer);
+            log.add((log.size() + 1) + ":  " + ETdivision1.getText().toString() + " / " + ETdivision2.getText().toString() + " = " + answer);
+        } catch (NumberFormatException | ArithmeticException e) {
+            answer = "NaN";
+            Tdivision.setText(answer);
+            log.add((log.size() + 1) + ":  NaN / NaN = NaN");
+        }
+        saveArray();
     }
 
     private void resetValues() {
-
         for (TextView T: Tlist)
         {
             T.setText("");
         }
     }
 
+    // Changes activity to activity_log.
     private void showLog() {
         Intent intentLog = new Intent(this, Logi.class);
-
-        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
-        SharedPreferences.Editor editor = pref.edit();
-
-        //Retrieve the values
-        //Set<String> set = log.getStringSet("key", null);
-
-        //Set the values
-        Set<String> set = new HashSet<String>();
-        set.addAll(log);
-        editor.putStringSet("logi", set);
-
-        editor.apply(); // commit changes
-
         startActivity(intentLog);
     }
 
+    // Save log information to SharedPreferences
     public boolean saveArray()
     {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor mEdit1 = sp.edit();
-    /* sKey is an array */
+        /* sKey is an array */
         mEdit1.putInt("Status_size", log.size());
 
         for(int i=0;i<log.size();i++)

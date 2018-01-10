@@ -8,19 +8,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Set;
 
 public class Logi extends AppCompatActivity {
 
     private Button Btakaisin;
     private ArrayList<String> log;
     private ListView LV_log;
-    ArrayAdapter<String> adapter;
+    private ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +29,8 @@ public class Logi extends AppCompatActivity {
         log = new ArrayList<>();
         LV_log = (ListView) findViewById(R.id.listViewLogi);
 
-        //SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
-        //SharedPreferences.Editor editor = pref.edit();
 
         loadArray(this);
-        fillListView();
 
         Btakaisin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -48,10 +42,12 @@ public class Logi extends AppCompatActivity {
         LV_log.setAdapter(adapter);
     }
 
+    // Finishes activity and returns.
     private void showCalculator() {
         finish();
     }
 
+    // Loads log array from SharedPreferences
     public void loadArray(Context mContext)
     {
         SharedPreferences mSharedPreference1 =   PreferenceManager.getDefaultSharedPreferences(mContext);
@@ -62,14 +58,6 @@ public class Logi extends AppCompatActivity {
         {
             log.add(mSharedPreference1.getString("Status_" + i, null));
         }
-    }
-
-    private void fillListView() {
-        //adapter.notifyDataSetChanged();
-/*
-        for(int i=0;i<log.size();i++)
-        {
-        }*/
     }
 }
 
