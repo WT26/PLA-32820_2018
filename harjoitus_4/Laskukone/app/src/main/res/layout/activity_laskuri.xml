@@ -1,11 +1,260 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".Laskuri">
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="alanko.wt.laskukone.Laskuri">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="456dp"
+        android:orientation="vertical">
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editTextPlus1"
+                android:layout_width="92dp"
+                android:layout_height="46dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <TextView
+                android:id="@+id/textViewPlus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="  +  "
+                tools:layout_editor_absoluteX="108dp"
+                tools:layout_editor_absoluteY="33dp" />
+
+            <EditText
+                android:id="@+id/editTextPlus2"
+                android:layout_width="92dp"
+                android:layout_height="46dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                tools:layout_editor_absoluteX="130dp"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <Button
+                android:id="@+id/buttonLaskePlus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Laske"
+                tools:layout_editor_absoluteX="222dp"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <TextView
+                android:id="@+id/textViewPlus2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="0"
+                tools:layout_editor_absoluteX="342dp"
+                tools:layout_editor_absoluteY="33dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editTextMinus1"
+                android:layout_width="92dp"
+                android:layout_height="46dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <TextView
+                android:id="@+id/textViewMinus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="   - "
+                tools:layout_editor_absoluteX="108dp"
+                tools:layout_editor_absoluteY="33dp" />
+
+            <EditText
+                android:id="@+id/editTextMinus2"
+                android:layout_width="92dp"
+                android:layout_height="46dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                tools:layout_editor_absoluteX="130dp"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <Button
+                android:id="@+id/buttonLaskeMinus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Laske"
+                tools:layout_editor_absoluteX="222dp"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <TextView
+                android:id="@+id/textViewMinus2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="0"
+                tools:layout_editor_absoluteX="342dp"
+                tools:layout_editor_absoluteY="33dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editTextTimes1"
+                android:layout_width="92dp"
+                android:layout_height="46dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <TextView
+                android:id="@+id/textViewTimes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="   x "
+                tools:layout_editor_absoluteX="108dp"
+                tools:layout_editor_absoluteY="33dp" />
+
+            <EditText
+                android:id="@+id/editTextTimes2"
+                android:layout_width="92dp"
+                android:layout_height="46dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                tools:layout_editor_absoluteX="130dp"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <Button
+                android:id="@+id/buttonLaskeTimes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Laske"
+                tools:layout_editor_absoluteX="222dp"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <TextView
+                android:id="@+id/textViewTimes2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="0"
+                tools:layout_editor_absoluteX="342dp"
+                tools:layout_editor_absoluteY="33dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editTextDivision1"
+                android:layout_width="92dp"
+                android:layout_height="46dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <TextView
+                android:id="@+id/textViewDivision"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="   / "
+                tools:layout_editor_absoluteX="108dp"
+                tools:layout_editor_absoluteY="33dp" />
+
+            <EditText
+                android:id="@+id/editTextDivision2"
+                android:layout_width="92dp"
+                android:layout_height="46dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="0"
+                android:inputType="number"
+                tools:layout_editor_absoluteX="130dp"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <Button
+                android:id="@+id/buttonLaskeDivision"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Laske"
+                tools:layout_editor_absoluteX="222dp"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <TextView
+                android:id="@+id/textViewDivision2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="0"
+                tools:layout_editor_absoluteX="342dp"
+                tools:layout_editor_absoluteY="33dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonReset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Tyhjennä kaikki" />
+
+            <Button
+                android:id="@+id/buttonLog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Näytä Logi" />
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
