@@ -1,14 +1,19 @@
 package alanko.wt.laskukone;
 
-import android.os.Bundle;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Locale;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Laskuri extends AppCompatActivity {
 
@@ -38,6 +43,9 @@ public class Laskuri extends AppCompatActivity {
 
     private ArrayList<TextView> Tlist;
 
+    private ArrayList<String> log;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,18 +73,9 @@ public class Laskuri extends AppCompatActivity {
 
         Breset = (Button) findViewById(R.id.buttonReset);
         Blog = (Button) findViewById(R.id.buttonLog);
-/*
-        ETlist = new ArrayList<EditText>(){{
-            add(ETplus1);
-            add(ETplus2);
-            add(ETminus1);
-            add(ETminus2);
-            add(ETtimes1);
-            add(ETtimes2);
-            add(ETdivision1);
-            add(ETdivision2);
-        }};
-*/
+
+        log = new ArrayList<String>();
+
         Tlist = new ArrayList<TextView>(){{
             add(Tplus);
             add(Tminus);
@@ -121,14 +120,24 @@ public class Laskuri extends AppCompatActivity {
                 resetValues();
             }
         });
+
+        Blog.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                showLog();
+            }
+        });
     }
 
     private void countPlus(){
-        Tplus.setText(String.valueOf(Integer.parseInt(ETplus1.getText().toString()) + Integer.parseInt(ETplus2.getText().toString())));
+        String answer = String.valueOf(Integer.parseInt(ETplus1.getText().toString()) + Integer.parseInt(ETplus2.getText().toString()));
+        Tplus.setText(answer);
+        log.add((log.size() + 1) + ":  " + ETplus1.getText().toString() + " + " + ETplus2.getText().toString() + " = " + answer);
+        saveArray();
     }
 
     private void countMinus(){
         Tminus.setText(String.valueOf(Integer.parseInt(ETminus1.getText().toString()) - Integer.parseInt(ETminus2.getText().toString())));
+
     }
 
     private void countTimes(){
@@ -146,7 +155,44 @@ public class Laskuri extends AppCompatActivity {
             T.setText("");
         }
     }
+
+    private void showLog() {
+        Intent intentLog = new Intent(this, Logi.class);
+
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+        SharedPreferences.Editor editor = pref.edit();
+
+        //Retrieve the values
+        //Set<String> set = log.getStringSet("key", null);
+
+        //Set the values
+        Set<String> set = new HashSet<String>();
+        set.addAll(log);
+        editor.putStringSet("logi", set);
+
+        editor.apply(); // commit changes
+
+        startActivity(intentLog);
+    }
+
+    public boolean saveArray()
+    {
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor mEdit1 = sp.edit();
+    /* sKey is an array */
+        mEdit1.putInt("Status_size", log.size());
+
+        for(int i=0;i<log.size();i++)
+        {
+            mEdit1.remove("Status_" + i);
+            mEdit1.putString("Status_" + i, log.get(i));
+        }
+
+        return mEdit1.commit();
+    }
 }
+
+
 
 
 

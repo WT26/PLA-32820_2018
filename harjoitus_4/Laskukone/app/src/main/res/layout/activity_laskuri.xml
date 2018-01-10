@@ -19,7 +19,7 @@
 
             <EditText
                 android:id="@+id/editTextPlus1"
-                android:layout_width="92dp"
+                android:layout_width="23dp"
                 android:layout_height="46dp"
                 android:layout_weight="1"
                 android:ems="10"
@@ -30,7 +30,7 @@
 
             <TextView
                 android:id="@+id/textViewPlus"
-                android:layout_width="wrap_content"
+                android:layout_width="10dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="  +  "
@@ -39,7 +39,7 @@
 
             <EditText
                 android:id="@+id/editTextPlus2"
-                android:layout_width="92dp"
+                android:layout_width="23dp"
                 android:layout_height="46dp"
                 android:layout_weight="1"
                 android:ems="10"
@@ -50,7 +50,7 @@
 
             <Button
                 android:id="@+id/buttonLaskePlus"
-                android:layout_width="wrap_content"
+                android:layout_width="67dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Laske"
@@ -59,7 +59,7 @@
 
             <TextView
                 android:id="@+id/textViewPlus2"
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="0"
@@ -75,7 +75,7 @@
 
             <EditText
                 android:id="@+id/editTextMinus1"
-                android:layout_width="92dp"
+                android:layout_width="23dp"
                 android:layout_height="46dp"
                 android:layout_weight="1"
                 android:ems="10"
@@ -86,7 +86,7 @@
 
             <TextView
                 android:id="@+id/textViewMinus"
-                android:layout_width="wrap_content"
+                android:layout_width="10dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="   - "
@@ -95,7 +95,7 @@
 
             <EditText
                 android:id="@+id/editTextMinus2"
-                android:layout_width="92dp"
+                android:layout_width="23dp"
                 android:layout_height="46dp"
                 android:layout_weight="1"
                 android:ems="10"
@@ -106,7 +106,7 @@
 
             <Button
                 android:id="@+id/buttonLaskeMinus"
-                android:layout_width="wrap_content"
+                android:layout_width="67dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Laske"
@@ -115,7 +115,7 @@
 
             <TextView
                 android:id="@+id/textViewMinus2"
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="0"
@@ -131,7 +131,7 @@
 
             <EditText
                 android:id="@+id/editTextTimes1"
-                android:layout_width="92dp"
+                android:layout_width="23dp"
                 android:layout_height="46dp"
                 android:layout_weight="1"
                 android:ems="10"
@@ -142,7 +142,7 @@
 
             <TextView
                 android:id="@+id/textViewTimes"
-                android:layout_width="wrap_content"
+                android:layout_width="10dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="   x "
@@ -151,7 +151,7 @@
 
             <EditText
                 android:id="@+id/editTextTimes2"
-                android:layout_width="92dp"
+                android:layout_width="23dp"
                 android:layout_height="46dp"
                 android:layout_weight="1"
                 android:ems="10"
@@ -162,7 +162,7 @@
 
             <Button
                 android:id="@+id/buttonLaskeTimes"
-                android:layout_width="wrap_content"
+                android:layout_width="67dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Laske"
@@ -171,7 +171,7 @@
 
             <TextView
                 android:id="@+id/textViewTimes2"
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="0"
@@ -187,7 +187,7 @@
 
             <EditText
                 android:id="@+id/editTextDivision1"
-                android:layout_width="92dp"
+                android:layout_width="23dp"
                 android:layout_height="46dp"
                 android:layout_weight="1"
                 android:ems="10"
@@ -198,7 +198,7 @@
 
             <TextView
                 android:id="@+id/textViewDivision"
-                android:layout_width="wrap_content"
+                android:layout_width="10dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="   / "
@@ -207,7 +207,7 @@
 
             <EditText
                 android:id="@+id/editTextDivision2"
-                android:layout_width="92dp"
+                android:layout_width="23dp"
                 android:layout_height="46dp"
                 android:layout_weight="1"
                 android:ems="10"
@@ -218,7 +218,7 @@
 
             <Button
                 android:id="@+id/buttonLaskeDivision"
-                android:layout_width="wrap_content"
+                android:layout_width="67dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Laske"
@@ -227,7 +227,7 @@
 
             <TextView
                 android:id="@+id/textViewDivision2"
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="0"
