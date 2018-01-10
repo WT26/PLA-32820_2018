@@ -129,6 +129,7 @@ public class Laskuri extends AppCompatActivity {
     }
 
     private void countPlus(){
+ 
         String answer = String.valueOf(Integer.parseInt(ETplus1.getText().toString()) + Integer.parseInt(ETplus2.getText().toString()));
         Tplus.setText(answer);
         log.add((log.size() + 1) + ":  " + ETplus1.getText().toString() + " + " + ETplus2.getText().toString() + " = " + answer);
