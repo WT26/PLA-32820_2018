@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="alanko.wt.tietokanta.MainActivity">
+
+
+    <TableLayout
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="ID"
+                android:textColor="#000000"/>
+            <View android:layout_width="2dp"
+                android:background="#FF909090"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:layout_column="2"
+                android:padding="3dip"
+                android:text="NAME"
+                android:layout_width="100dp"
+                android:textColor="#000000"/>
+            <View android:layout_width="2dp"
+                android:background="#FF909090"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:layout_column="3"
+                android:padding="3dip"
+                android:text="SCORE"
+                android:layout_width="100dp"
+                android:textColor="#000000"/>
+            <View android:layout_width="2dp"
+                android:background="#FF909090"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:layout_column="4"
+                android:padding="3dip"
+                android:text="GENRE"
+                android:layout_width="100dp"
+                android:textColor="#000000"/>
+        </TableRow>
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="ID" />
+            <View android:layout_width="2dp"
+                android:background="#FF909090"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:layout_column="2"
+                android:padding="3dip"
+                android:text="NAME"
+                android:layout_width="100dp"/>
+            <View android:layout_width="2dp"
+                android:background="#FF909090"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:layout_column="3"
+                android:padding="3dip"
+                android:text="SCORE"
+                android:layout_width="100dp"/>
+            <View android:layout_width="2dp"
+                android:background="#FF909090"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:layout_column="4"
+                android:padding="3dip"
+                android:text="GENRE"
+                android:layout_width="100dp"/>
+        </TableRow>
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="ID" />
+            <View android:layout_width="2dp"
+                android:background="#FF909090"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:layout_column="2"
+                android:padding="3dip"
+                android:text="NAME"
+                android:layout_width="100dp"/>
+            <View android:layout_width="2dp"
+                android:background="#FF909090"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:layout_column="3"
+                android:padding="3dip"
+                android:text="SCORE"
+                android:layout_width="100dp"/>
+            <View android:layout_width="2dp"
+                android:background="#FF909090"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:layout_column="4"
+                android:padding="3dip"
+                android:text="GENRE"
+                android:layout_width="100dp"/>
+        </TableRow>
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+        <TableRow>
+            <TextView
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="ID" />
+            <View android:layout_width="2dp"
+                android:background="#FF909090"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:layout_column="2"
+                android:padding="3dip"
+                android:text="NAME"
+                android:layout_width="100dp"/>
+            <View android:layout_width="2dp"
+                android:background="#FF909090"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:layout_column="3"
+                android:padding="3dip"
+                android:text="SCORE"
+                android:layout_width="100dp"/>
+            <View android:layout_width="2dp"
+                android:background="#FF909090"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:layout_column="4"
+                android:padding="3dip"
+                android:text="GENRE"
+                android:layout_width="100dp"/>
+        </TableRow>
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+
+    </TableLayout>
+</android.support.constraint.ConstraintLayout>
