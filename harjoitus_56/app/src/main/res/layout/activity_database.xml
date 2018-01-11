@@ -57,101 +57,146 @@
         <View
             android:layout_height="2dip"
             android:background="#FF909090" />
-        <TableRow>
+
+        <TableRow android:id="@+id/dbRow1">
+
             <TextView
+                android:id="@+id/db11"
                 android:layout_column="1"
                 android:padding="3dip"
                 android:text="ID" />
-            <View android:layout_width="2dp"
-                android:background="#FF909090"
-                android:layout_height="match_parent"/>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="#FF909090" />
+
             <TextView
+                android:id="@+id/db12"
+                android:layout_width="100dp"
                 android:layout_column="2"
                 android:padding="3dip"
-                android:text="NAME"
-                android:layout_width="100dp"/>
-            <View android:layout_width="2dp"
-                android:background="#FF909090"
-                android:layout_height="match_parent"/>
+                android:text="NAME" />
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="#FF909090" />
+
             <TextView
+                android:id="@+id/db13"
+                android:layout_width="100dp"
                 android:layout_column="3"
                 android:padding="3dip"
-                android:text="SCORE"
-                android:layout_width="100dp"/>
-            <View android:layout_width="2dp"
-                android:background="#FF909090"
-                android:layout_height="match_parent"/>
+                android:text="SCORE" />
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="#FF909090" />
+
             <TextView
+                android:id="@+id/db14"
+                android:layout_width="100dp"
                 android:layout_column="4"
                 android:padding="3dip"
-                android:text="GENRE"
-                android:layout_width="100dp"/>
+                android:text="GENRE" />
         </TableRow>
         <View
             android:layout_height="2dip"
             android:background="#FF909090" />
-        <TableRow>
+
+        <TableRow android:id="@+id/dbRow2">
+
             <TextView
+                android:id="@+id/db21"
                 android:layout_column="1"
                 android:padding="3dip"
                 android:text="ID" />
-            <View android:layout_width="2dp"
-                android:background="#FF909090"
-                android:layout_height="match_parent"/>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="#FF909090" />
+
             <TextView
+                android:id="@+id/db22"
+                android:layout_width="100dp"
                 android:layout_column="2"
                 android:padding="3dip"
-                android:text="NAME"
-                android:layout_width="100dp"/>
-            <View android:layout_width="2dp"
-                android:background="#FF909090"
-                android:layout_height="match_parent"/>
+                android:text="NAME" />
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="#FF909090" />
+
             <TextView
+                android:id="@+id/db23"
+                android:layout_width="100dp"
                 android:layout_column="3"
                 android:padding="3dip"
-                android:text="SCORE"
-                android:layout_width="100dp"/>
-            <View android:layout_width="2dp"
-                android:background="#FF909090"
-                android:layout_height="match_parent"/>
+                android:text="SCORE" />
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="#FF909090" />
+
             <TextView
+                android:id="@+id/db24"
+                android:layout_width="100dp"
                 android:layout_column="4"
                 android:padding="3dip"
-                android:text="GENRE"
-                android:layout_width="100dp"/>
+                android:text="GENRE" />
         </TableRow>
         <View
             android:layout_height="2dip"
             android:background="#FF909090" />
-        <TableRow>
+
+        <TableRow android:id="@+id/dbRow3">
+
             <TextView
+                android:id="@+id/db31"
                 android:layout_column="1"
                 android:padding="3dip"
                 android:text="ID" />
-            <View android:layout_width="2dp"
-                android:background="#FF909090"
-                android:layout_height="match_parent"/>
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="#FF909090" />
+
             <TextView
+                android:id="@+id/db32"
+                android:layout_width="100dp"
                 android:layout_column="2"
                 android:padding="3dip"
-                android:text="NAME"
-                android:layout_width="100dp"/>
-            <View android:layout_width="2dp"
-                android:background="#FF909090"
-                android:layout_height="match_parent"/>
+                android:text="NAME" />
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="#FF909090" />
+
             <TextView
+                android:id="@+id/db33"
+                android:layout_width="100dp"
                 android:layout_column="3"
                 android:padding="3dip"
-                android:text="SCORE"
-                android:layout_width="100dp"/>
-            <View android:layout_width="2dp"
-                android:background="#FF909090"
-                android:layout_height="match_parent"/>
+                android:text="SCORE" />
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="match_parent"
+                android:background="#FF909090" />
+
             <TextView
+                android:id="@+id/db34"
+                android:layout_width="100dp"
                 android:layout_column="4"
                 android:padding="3dip"
-                android:text="GENRE"
-                android:layout_width="100dp"/>
+                android:text="GENRE" />
         </TableRow>
         <View
             android:layout_height="2dip"
