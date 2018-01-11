@@ -124,7 +124,7 @@ public class Laskuri extends AppCompatActivity {
         });
     }
 
-    // Counts operation, updates answer and updates log. Handles arithmetic errors.
+    // Count operation, updates answer and updates log. Handles arithmetic errors.
     private void countPlus(){
         String answer = null;
         try {
