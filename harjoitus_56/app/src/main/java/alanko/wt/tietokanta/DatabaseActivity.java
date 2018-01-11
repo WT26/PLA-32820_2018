@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.List;
+
 public class DatabaseActivity extends Fragment {
     private TextView db11;
     private TextView db12;
@@ -23,6 +25,8 @@ public class DatabaseActivity extends Fragment {
     private TextView db33;
     private TextView db34;
 
+    private CommentsDataSource datasource;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -31,6 +35,8 @@ public class DatabaseActivity extends Fragment {
         View rootView = inflater.inflate(R.layout.activity_database,
                 container, false);
 
+        datasource = new CommentsDataSource(getContext());
+        datasource.open();
 
         db11 = (TextView) rootView.findViewById(R.id.db11);
         db12 = (TextView) rootView.findViewById(R.id.db12);
@@ -47,7 +53,11 @@ public class DatabaseActivity extends Fragment {
         db33 = (TextView) rootView.findViewById(R.id.db33);
         db34 = (TextView) rootView.findViewById(R.id.db34);
 
-        db11.setText("YOLO");
+        Comment comment = null;
+        comment = datasource.createComment("Bloodborne");
+        List<Comment> comments = datasource.getAllComments();
+
+        db11.setText(comments.get(0).getComment());
 
         return rootView;
     }
