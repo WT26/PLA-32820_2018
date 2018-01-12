@@ -25,7 +25,7 @@ public class DatabaseActivity extends Fragment {
     private TextView db33;
     private TextView db34;
 
-    private CommentsDataSource datasource;
+    private StructDataSource datasource;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,7 +35,7 @@ public class DatabaseActivity extends Fragment {
         View rootView = inflater.inflate(R.layout.activity_database,
                 container, false);
 
-        datasource = new CommentsDataSource(getContext());
+        datasource = new StructDataSource(getContext());
         datasource.open();
 
         db11 = (TextView) rootView.findViewById(R.id.db11);
@@ -53,11 +53,18 @@ public class DatabaseActivity extends Fragment {
         db33 = (TextView) rootView.findViewById(R.id.db33);
         db34 = (TextView) rootView.findViewById(R.id.db34);
 
-        Comment comment = null;
-        comment = datasource.createComment("Bloodborne");
-        List<Comment> comments = datasource.getAllComments();
+        Struct struct = null;
+        struct = datasource.createStruct("Bloodborne", "10", "Action RPG");
+        struct = datasource.createStruct("Persona 5", "10", "JRPG");
+        struct = datasource.createStruct("Zelda: BotW", "10", "Puzzle/Adventure");
+        struct = datasource.createStruct("Super Mario Odyssey", "10", "3D Platformer");
 
-        db11.setText(comments.get(0).getComment());
+        List<Struct> structs = datasource.getAllStructs();
+
+        db11.setText(String.valueOf(structs.get(0).getId()));
+        db12.setText(structs.get(0).getName());
+        db13.setText(structs.get(0).getScore());
+        db13.setText(structs.get(0).getGenre());
 
         return rootView;
     }

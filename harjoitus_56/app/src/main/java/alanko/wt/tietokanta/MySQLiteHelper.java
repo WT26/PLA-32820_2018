@@ -7,17 +7,21 @@ import android.util.Log;
 
 public class MySQLiteHelper extends SQLiteOpenHelper {
 
-    public static final String TABLE_COMMENTS = "comments";
+    public static final String TABLE_GAME_RANK = "game_rank";
     public static final String COLUMN_ID = "_id";
-    public static final String COLUMN_COMMENT = "comment";
+    public static final String COLUMN_NAME = "name";
+    public static final String COLUMN_SCORE = "score";
+    public static final String COLUMN_GENRE = "genre";
 
-    private static final String DATABASE_NAME = "commments.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final String DATABASE_NAME = "game_ranks.db";
+    private static final int DATABASE_VERSION = 3;
 
     // Database creation sql statement
     private static final String DATABASE_CREATE = "create table "
-            + TABLE_COMMENTS + "( " + COLUMN_ID
-            + " integer primary key autoincrement, " + COLUMN_COMMENT
+            + TABLE_GAME_RANK + "( " + COLUMN_ID
+            + " integer primary key autoincrement, " + COLUMN_NAME
+            + " text not null, " + COLUMN_SCORE
+            + " text not null, " + COLUMN_GENRE
             + " text not null);";
 
     public MySQLiteHelper(Context context) {
@@ -34,7 +38,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         Log.w(MySQLiteHelper.class.getName(),
                 "Upgrading database from version " + oldVersion + " to "
                         + newVersion + ", which will destroy all old data");
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_COMMENTS);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_GAME_RANK);
         onCreate(db);
     }
 
