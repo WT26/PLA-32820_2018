@@ -1,20 +1,21 @@
 package alanko.wt.tietokanta;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class MySQLiteHelper extends SQLiteOpenHelper {
 
-    public static final String TABLE_GAME_RANK = "game_rank";
+    public static final String TABLE_GAME_RANK = "gamerank";
     public static final String COLUMN_ID = "_id";
     public static final String COLUMN_NAME = "name";
     public static final String COLUMN_SCORE = "score";
     public static final String COLUMN_GENRE = "genre";
 
-    private static final String DATABASE_NAME = "game_ranks.db";
-    private static final int DATABASE_VERSION = 3;
+    private static final String DATABASE_NAME = "gamerank";
+    private static final int DATABASE_VERSION = 7;
 
     // Database creation sql statement
     private static final String DATABASE_CREATE = "create table "
@@ -29,9 +30,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase database) {
-        database.execSQL(DATABASE_CREATE);
-    }
+    public void onCreate(SQLiteDatabase database) { database.execSQL(DATABASE_CREATE); }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -41,5 +40,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_GAME_RANK);
         onCreate(db);
     }
+
+
 
 }

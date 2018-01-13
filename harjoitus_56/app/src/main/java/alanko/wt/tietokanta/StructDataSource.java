@@ -8,6 +8,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 public class StructDataSource {
 
@@ -15,7 +16,9 @@ public class StructDataSource {
     private SQLiteDatabase database;
     private MySQLiteHelper dbHelper;
     private String[] allColumns = { MySQLiteHelper.COLUMN_ID,
-            MySQLiteHelper.COLUMN_NAME};
+            MySQLiteHelper.COLUMN_NAME,
+            MySQLiteHelper.COLUMN_SCORE,
+            MySQLiteHelper.COLUMN_GENRE};
 
     public StructDataSource(Context context) {
         dbHelper = new MySQLiteHelper(context);
@@ -64,12 +67,17 @@ public class StructDataSource {
             structs.add(struct);
             cursor.moveToNext();
         }
+
+        int i = cursor.getCount();
+        Log.d("Debug", String.valueOf(i));
         // make sure to close the cursor
         cursor.close();
         return structs;
     }
 
     private Struct cursorToStruct(Cursor cursor) {
+        //int i = cursor.getColumnCount();
+        //Log.d("Debug", String.valueOf(i));
         Struct struct = new Struct();
         struct.setId(cursor.getLong(0));
         struct.setName(cursor.getString(1));

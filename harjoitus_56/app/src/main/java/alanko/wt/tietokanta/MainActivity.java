@@ -35,7 +35,7 @@ public class MainActivity extends FragmentActivity {
         FragmentManager manager = getSupportFragmentManager();
         manager.beginTransaction().replace(R.id.fragment_container, new AddActivity()).commit();
 
-
+/*
         db11 = (TextView) findViewById(R.id.db11);
         db12 = (TextView) findViewById(R.id.db12);
         db13 = (TextView) findViewById(R.id.db13);
@@ -50,7 +50,7 @@ public class MainActivity extends FragmentActivity {
         db32 = (TextView) findViewById(R.id.db32);
         db33 = (TextView) findViewById(R.id.db33);
         db34 = (TextView) findViewById(R.id.db34);
-
+*/
         //db11.setText("MOI");
 
 

@@ -39,8 +39,8 @@ public class Struct {
     }
 
     // Will be used by the ArrayAdapter in the ListView
-    @Override
-    public String toString() {
-        return name;
-    }
+    //@Override
+    //public String toString() {
+    //    return name;
+    //}
 }
