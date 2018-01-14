@@ -1,9 +1,7 @@
 package alanko.wt.tietokanta;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,31 +9,13 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseActivity extends Fragment {
-    private TextView db11;
-    private TextView db12;
-    private TextView db13;
-    private TextView db14;
-
-    private TextView db21;
-    private TextView db22;
-    private TextView db23;
-    private TextView db24;
-
-    private TextView db31;
-    private TextView db32;
-    private TextView db33;
-    private TextView db34;
 
     private TableLayout TLDB;
-
     private ArrayList<TextView> dbList;
-
     private StructDataSource datasource;
 
     @Override
@@ -48,48 +28,14 @@ public class DatabaseActivity extends Fragment {
 
         datasource = new StructDataSource(getContext());
         datasource.open();
-/*
-        db11 = (TextView) rootView.findViewById(R.id.db11);
-        db12 = (TextView) rootView.findViewById(R.id.db12);
-        db13 = (TextView) rootView.findViewById(R.id.db13);
-        db14 = (TextView) rootView.findViewById(R.id.db14);
 
-        db21 = (TextView) rootView.findViewById(R.id.db21);
-        db22 = (TextView) rootView.findViewById(R.id.db22);
-        db23 = (TextView) rootView.findViewById(R.id.db23);
-        db24 = (TextView) rootView.findViewById(R.id.db24);
-
-        db31 = (TextView) rootView.findViewById(R.id.db31);
-        db32 = (TextView) rootView.findViewById(R.id.db32);
-        db33 = (TextView) rootView.findViewById(R.id.db33);
-        db34 = (TextView) rootView.findViewById(R.id.db34);
-*/
         dbList = new ArrayList<TextView>();
-        /*
-        dbList.add(db11);
-        dbList.add(db12);
-        dbList.add(db13);
-        dbList.add(db14);
-        dbList.add(db21);
-        dbList.add(db22);
-        dbList.add(db23);
-        dbList.add(db24);
-        dbList.add(db31);
-        dbList.add(db32);
-        dbList.add(db33);
-        dbList.add(db34);
-*/
+
         TLDB = (TableLayout) rootView.findViewById(R.id.tableLayoutDB) ;
 
-        Struct struct = null;
-  /*
-        datasource.createStruct("Bloodborne", "10", "Action RPG");
-        datasource.createStruct("Persona 5", "10", "JRPG");
-        datasource.createStruct("Zelda: BotW", "10", "Puzzle/Adventure");
-        datasource.createStruct("Super Mario Odyssey", "10", "3D Platformer");
-*/
         List<Struct> structs = datasource.getAllStructs();
 
+        // If there are no rows created yet, create one.
         if(structs.size() > dbList.size() / 4){
             createNewTableRowView();
         }
@@ -98,9 +44,10 @@ public class DatabaseActivity extends Fragment {
         int counter = 0;
         int index = 0;
 
+        // Searches through the Database and writes ID, name, score and genre to appropriate
+        // TextViews
         while (i < structs.size()){
             TextView t = dbList.get(index);
-            Log.d("DEBUG", String.valueOf(dbList.size()));
             if(counter == 0){
                 t.setText(String.valueOf(structs.get(i).getId()));
             }
@@ -122,11 +69,11 @@ public class DatabaseActivity extends Fragment {
             index += 1;
         };
 
-        for(TextView t: dbList){
-        }
+
         return rootView;
     }
 
+    // Creates dynamically new row for the table. Rows includes ID, Name, Score and genre.
     private void createNewTableRowView(){
 
         TableRow row = new TableRow(getContext());
@@ -137,46 +84,27 @@ public class DatabaseActivity extends Fragment {
         tv1.setLayoutParams(new TableRow.LayoutParams(1));
         tv1.setPadding(3,0,0,0);
         dbList.add(tv1);
-/*
-        View v1 = new View(getContext());
-        v1.setBackgroundColor(Color.parseColor("#FF909090"));
-        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(100, ViewGroup.LayoutParams.MATCH_PARENT);
-        v1.setLayoutParams(params);
-*/
+
         TextView tv2 = new TextView(getContext());
         tv2.setLayoutParams(new TableRow.LayoutParams(3));
         tv2.setPadding(3,0,0,0);
         dbList.add(tv2);
-/*
-        View v2 = new View(getContext());
-        v2.setBackgroundColor(Color.parseColor("#FF909090"));
-        v2.setLayoutParams(params);
-*/
+
         TextView tv3 = new TextView(getContext());
         tv3.setLayoutParams(new TableRow.LayoutParams(5));
         tv3.setPadding(3,0,0,0);
         dbList.add(tv3);
-/*
-        View v3 = new View(getContext());
-        v3.setBackgroundColor(Color.parseColor("#FF909090"));
-        v3.setLayoutParams(params);
 
-        */
         TextView tv4 = new TextView(getContext());
         tv4.setLayoutParams(new TableRow.LayoutParams(7));
         tv4.setPadding(3,0,0,0);
         dbList.add(tv4);
 
-
         row.addView(tv1);
-        //row.addView(v1);
         row.addView(tv2);
-        //row.addView(v2);
         row.addView(tv3);
-        //row.addView(v3);
         row.addView(tv4);
 
-        //tl.addView(tr, new TableLayout.LayoutParams(TableLayout.LayoutParams.FILL_PARENT, TableLayout.LayoutParams.WRAP_CONTENT));
         TLDB.addView(row);
     }
 }
