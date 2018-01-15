@@ -1,4 +1,4 @@
-package alanko.wt.tietokanta;
+package alanko.wt.firebase;
 
 import android.content.Context;
 import android.database.Cursor;
