@@ -6,6 +6,16 @@ public class Struct {
     private String score;
     private String genre;
 
+    public Struct (){
+
+    }
+    public Struct (long id, String name, String score, String genre){
+        this.id = id;
+        this.name = name;
+        this.score = score;
+        this.genre = genre;
+    }
+
     public long getId() {
         return id;
     }

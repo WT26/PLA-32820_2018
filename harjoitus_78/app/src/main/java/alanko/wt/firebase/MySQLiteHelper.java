@@ -15,7 +15,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     public static final String COLUMN_GENRE = "genre";
 
     private static final String DATABASE_NAME = "gamerank";
-    private static final int DATABASE_VERSION = 8;
+    private static final int DATABASE_VERSION = 9;
 
     // Database creation sql statement
     private static final String DATABASE_CREATE = "create table "
